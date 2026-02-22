@@ -1,0 +1,3 @@
+src/components/3d/SystemPipeline3D.tsx(4,26): error TS6133: 'Mesh' is declared but its value is never read.
+src/components/3d/SystemPipeline3D.tsx(14,42): error TS6133: 'isFirst' is declared but its value is never read.
+src/components/3d/SystemPipeline3D.tsx(14,51): error TS6133: 'isLast' is declared but its value is never read.
