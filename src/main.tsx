@@ -2,6 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
+console.log('MAIN.TSX LOADING...');
+const diag = document.getElementById('diag-status');
+if (diag) diag.innerText = 'Status: main.tsx executing...';
+
 // Diagnostic: show dark bg immediately so user knows CSS loaded
 document.body.style.background = '#0B0F1A';
 
