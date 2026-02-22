@@ -1,6 +1,8 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+
+// NUCLEAR DIAGNOSTIC: This bypasses all CSS/React.
+document.write('<div style="background:red; color:white; padding:50px; position:fixed; inset:0; z-index:99999; font-size:30px;">JS EXECUTING: ' + new Date().toLocaleTimeString() + '</div>');
 
 console.log('MAIN.TSX LOADING...');
 const diag = document.getElementById('diag-status');
@@ -14,11 +16,9 @@ import ErrorBoundary from './components/ui/ErrorBoundary'
 
 try {
     createRoot(document.getElementById('root')!).render(
-        <StrictMode>
-            <ErrorBoundary fallback={<div style={{ color: 'white', textAlign: 'center', paddingTop: '100px', fontFamily: 'monospace' }}>Something went wrong. Check console (F12).</div>}>
-                <App />
-            </ErrorBoundary>
-        </StrictMode>,
+        <ErrorBoundary fallback={<div style={{ color: 'white', textAlign: 'center', paddingTop: '100px', fontFamily: 'monospace' }}>Something went wrong. Check console (F12).</div>}>
+            <App />
+        </ErrorBoundary>,
     )
 } catch (err) {
     console.error('MOUNT ERROR:', err);
